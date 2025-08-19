@@ -1,18 +1,16 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-ui',
+  selector: 'app-counter-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   template: `
     <div>
       <button class="btn btn-primary">-</button>
-      <span>{{ counterValue() }}</span>
+      <span>0</span>
       <button class="btn btn-primary">+</button>
     </div>
   `,
   styles: ``,
 })
-export class Ui {
-  counterValue = signal(0);
-}
+export class Ui {}

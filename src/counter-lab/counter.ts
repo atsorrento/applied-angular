@@ -1,16 +1,17 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
+import { RouterLinkActive_1 as RouterLinkActive } from '../../node_modules/@angular/router/router_module.d';
 
 @Component({
   selector: 'app-counter',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterOutlet],
-  template: `<div>Counter Stuff Goes Here</div>
-    <router-outlet />
-    <p>
-      <a routerLink="ui">UI</a>
-    </p> `,
+  imports: [RouterLink, RouterOutlet, RouterLinkActive],
+  template: `
+    <div>
+      <a routerLink="ui" [routerLinkActive]="['underline', 'font-bold']">UI</a>
+    </div>
+    <div><router-outlet /></div>
+  `,
   styles: ``,
 })
 export class Counter {}
